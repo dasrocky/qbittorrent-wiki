@@ -189,6 +189,7 @@ Create a systemd service file `sudo nano /etc/systemd/system/qbittorrent.service
 
 Contents for Raspberry Pi OS:
 ~~~~
+[Unit]
 Description=qBittorrent Daemon Service
 After=network.target
 
@@ -204,7 +205,9 @@ WantedBy=multi-user.target
 
 Contents for DietPi:
 ~~~~
+[Unit]
 Description=qBittorrent Daemon Service
+Wants=network-online.target
 After=network.target
 
 [Service]
